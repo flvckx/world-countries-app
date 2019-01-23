@@ -20,7 +20,7 @@ class LoadingPageView: UIView {
     @IBInspectable
     var loadingText: String = "" {
         didSet {
-            loadingTextLabel.text = loadingText
+            loadingTextLabel?.text = loadingText
         }
     }
     

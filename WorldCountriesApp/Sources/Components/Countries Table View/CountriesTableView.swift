@@ -72,7 +72,7 @@ extension CountriesTableViewImpl: UITableViewDelegate, UITableViewDataSource {
         let identifier = String(describing: CountryTableViewCell.self)
         
         guard let cell = tableView.dequeueReusableCell(withIdentifier: identifier, for: indexPath) as? CountryTableViewCellImpl else {
-            fatalError("Unable to dequeue reusable cell with NewsTableViewCellImpl identifier.")
+            fatalError("Unable to dequeue reusable cell with CountryTableViewCellImpl identifier.")
         }
         
         let country = presenter.countryFor(index: indexPath.row)

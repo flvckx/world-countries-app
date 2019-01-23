@@ -44,7 +44,21 @@ class CountriesListPresenterImpl: CountriesListPresenter {
     
     func didLoad() {
         view?.showLoadingPageView()
-        // load countries and save
+        
+        let countries = fetchCountries()
+        if countries.isEmpty {
+            countriesLoadingService.loadCountries { [weak self] (countries) in
+                guard let countries = countries else {
+                    return
+                }
+                
+                DispatchQueue.main.async {
+                    self?.reloadTable(countries)
+                }
+            }
+        } else {
+            self.reloadTable(countries)
+        }
     }
 }
 
@@ -59,5 +73,15 @@ extension CountriesListPresenterImpl: CountriesTablePresenterDelegate {
 // MARK: Private fucntions
 private extension CountriesListPresenterImpl {
     
+    func fetchCountries() -> [Country] {
+        let countries = databaseService.fetchCountries()
+        
+        return countries ?? []
+    }
+    
+    func reloadTable(_ countries: [Country]) {
+        self.countriesTablePresenter.countries = countries
+        self.view?.hideLoadingPageView()
+    }
 }
 

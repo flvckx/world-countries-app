@@ -25,7 +25,11 @@ class CountriesTablePresenterImpl: CountriesTablePresenter {
     
     unowned private let tableView: CountriesTableView
     
-    var countries: [Country]
+    var countries: [Country] = [] {
+        didSet {
+            self.tableView.showCountries()
+        }
+    }
     
     var countriesCount: Int {
         return countries.count

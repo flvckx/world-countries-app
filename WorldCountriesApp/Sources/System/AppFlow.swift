@@ -26,8 +26,8 @@ class AppFlow {
             return
         }
         
-        let databaseService = DatabaseService()
-        let countriesLoadingService = CountriesLoadingService()
+        let databaseService = DatabaseServiceImpl()
+        let countriesLoadingService = CountriesLoadingServiceImpl()
         
         let countriesListPresenter = CountriesListPresenterImpl(
             view: countriesListViewController,

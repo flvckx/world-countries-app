@@ -27,8 +27,8 @@
 		C69D67DA21F87F1B00A5A4A6 /* CountryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C69D67D921F87F1B00A5A4A6 /* CountryTableViewCell.xib */; };
 		C69D67E021F8837200A5A4A6 /* CountriesSceneRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C69D67DF21F8837200A5A4A6 /* CountriesSceneRouter.swift */; };
 		C69D67E221F884A200A5A4A6 /* CountriesListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C69D67E121F884A200A5A4A6 /* CountriesListPresenter.swift */; };
-		C69D67E521F8874300A5A4A6 /* DatabaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C69D67E421F8874300A5A4A6 /* DatabaseService.swift */; };
 		C69D67E721F8879700A5A4A6 /* CountriesLoadingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C69D67E621F8879700A5A4A6 /* CountriesLoadingService.swift */; };
+		C69D67E921F8926B00A5A4A6 /* DatabaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C69D67E821F8926B00A5A4A6 /* DatabaseService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,8 +54,8 @@
 		C69D67D921F87F1B00A5A4A6 /* CountryTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CountryTableViewCell.xib; sourceTree = "<group>"; };
 		C69D67DF21F8837200A5A4A6 /* CountriesSceneRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesSceneRouter.swift; sourceTree = "<group>"; };
 		C69D67E121F884A200A5A4A6 /* CountriesListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesListPresenter.swift; sourceTree = "<group>"; };
-		C69D67E421F8874300A5A4A6 /* DatabaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseService.swift; sourceTree = "<group>"; };
 		C69D67E621F8879700A5A4A6 /* CountriesLoadingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesLoadingService.swift; sourceTree = "<group>"; };
+		C69D67E821F8926B00A5A4A6 /* DatabaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -237,8 +237,8 @@
 		C69D67E321F8872F00A5A4A6 /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				C69D67E421F8874300A5A4A6 /* DatabaseService.swift */,
 				C69D67E621F8879700A5A4A6 /* CountriesLoadingService.swift */,
+				C69D67E821F8926B00A5A4A6 /* DatabaseService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -316,13 +316,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C69D67E921F8926B00A5A4A6 /* DatabaseService.swift in Sources */,
 				C69D67D621F87DBD00A5A4A6 /* CountryTableViewCell.swift in Sources */,
 				C69D679921F7AF0D00A5A4A6 /* CountriesListViewController.swift in Sources */,
 				C69D679721F7AF0D00A5A4A6 /* AppDelegate.swift in Sources */,
 				C69D67D121F7BE5200A5A4A6 /* CountriesTableView.swift in Sources */,
 				C69D67C221F7BC0600A5A4A6 /* AppRouter.swift in Sources */,
 				C69D67B921F7B62700A5A4A6 /* Country.swift in Sources */,
-				C69D67E521F8874300A5A4A6 /* DatabaseService.swift in Sources */,
 				C69D67C021F7BBD000A5A4A6 /* AppFlow.swift in Sources */,
 				C69D67D321F7BEA900A5A4A6 /* CountriesTablePresenter.swift in Sources */,
 				C69D67E721F8879700A5A4A6 /* CountriesLoadingService.swift in Sources */,
