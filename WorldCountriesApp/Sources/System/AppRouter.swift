@@ -16,13 +16,13 @@ struct AppRouter {
         
         private enum Screens: String {
             case countries = "CountriesNavigationController"
-            case countryBorders = "CountryBordersViewImpl"
+            case countryBorders = "BordersListViewController"
         }
         
         let mainNavigationController = storyboard.instantiateViewController(
             withIdentifier: Screens.countries.rawValue) as? UINavigationController
         
-//        let countryBordersViewController = storyboard.instantiateViewController(
-//            withIdentifier: Screens.countryBorders.rawValue) as? CountryBordersViewImpl
+        let bordersViewController = storyboard.instantiateViewController(
+            withIdentifier: Screens.countryBorders.rawValue) as? BordersListViewController
     }
 }

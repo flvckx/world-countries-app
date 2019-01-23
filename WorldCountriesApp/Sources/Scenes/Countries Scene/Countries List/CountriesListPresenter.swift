@@ -66,6 +66,11 @@ class CountriesListPresenterImpl: CountriesListPresenter {
 extension CountriesListPresenterImpl: CountriesTablePresenterDelegate {
 
     func countriesTablePresenterDidSelectCountry(country: Country, presenter: CountriesTablePresenter) {
+        guard country.borders?.count != 0 else {
+            view?.showAlert("It might be an island because there're no borders.")
+            return
+        }
+        
         view?.openCountryBorders(country: country)
     }
 }

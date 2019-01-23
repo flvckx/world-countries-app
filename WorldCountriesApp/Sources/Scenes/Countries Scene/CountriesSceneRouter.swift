@@ -27,6 +27,18 @@ final class CountriesSceneRouterImpl: CountriesSceneRouter {
     }
     
     func navigateToCountryBorders(_ country: Country) {
-
+        guard let bordersListViewController = AppRouter.CountriesScene().bordersViewController else {
+            return
+        }
+        
+        let databaseService = DatabaseServiceImpl()
+        let bordersListPresenter = BordersListPresenterImpl(view: bordersListViewController,
+                                                            country: country,
+                                                            databaseService: databaseService
+        )
+        
+        bordersListViewController.presenter = bordersListPresenter
+        
+        show(bordersListViewController)
     }
 }

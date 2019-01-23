@@ -11,10 +11,6 @@ import UIKit
 
 fileprivate let urlPath: String = "https://restcountries.eu/rest/v2/all"
 
-fileprivate enum httpMethods: String {
-    case get = "GET"
-}
-
 protocol CountriesLoadingService: Service {
     func loadCountries(completion: @escaping ([Country]?) -> Void)
 }

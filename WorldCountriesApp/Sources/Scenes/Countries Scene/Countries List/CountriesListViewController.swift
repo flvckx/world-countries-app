@@ -9,9 +9,8 @@
 import UIKit
 
 protocol CountriesListView: View {
-    func showCountriesTableView()
-    func hideCountriesTableView()
     func openCountryBorders(country: Country)
+    func showAlert(_ message: String)
     func showLoadingPageView()
     func hideLoadingPageView()
 }
@@ -50,12 +49,16 @@ extension CountriesListViewControllerImpl: CountriesListView {
         router.navigateToCountryBorders(country)
     }
     
-    func showCountriesTableView() {
-        countriesTableView.isHidden = false
-    }
-    
-    func hideCountriesTableView() {
-        countriesTableView.isHidden = true
+    func showAlert(_ message: String) {
+        let alertController = UIAlertController(title: "WorldCountriesApp",
+                                                message: message,
+                                                preferredStyle: .alert)
+        
+        let okAction = UIAlertAction(title: "OK",
+                                     style: .default)
+        alertController.addAction(okAction)
+        
+        present(alertController, animated: true)
     }
     
     func showLoadingPageView() {

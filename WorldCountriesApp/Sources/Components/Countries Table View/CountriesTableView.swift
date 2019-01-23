@@ -55,7 +55,6 @@ extension CountriesTableViewImpl: CountriesTableView {
         let indexPath = IndexPath(row: index, section: 0)
         self.reloadRows(at: [indexPath], with: .none)
     }
-    
 }
 
 extension CountriesTableViewImpl: UITableViewDelegate, UITableViewDataSource {

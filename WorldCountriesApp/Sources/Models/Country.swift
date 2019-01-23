@@ -14,10 +14,12 @@ import CoreData
 public class Country: NSManagedObject, Decodable {
 
     @NSManaged public var nativeName: String?
+    @NSManaged public var alpha3Code: String?
     @NSManaged public var borders: Set<String>?
     
     enum CodingKeys: String, CodingKey {
         case nativeName
+        case alpha3Code
         case borders
     }
     
@@ -32,6 +34,7 @@ public class Country: NSManagedObject, Decodable {
         
         let container = try decoder.container(keyedBy: CodingKeys.self)
         self.nativeName = try container.decodeIfPresent(String.self, forKey: .nativeName)
+        self.alpha3Code = try container.decodeIfPresent(String.self, forKey: .alpha3Code)
         self.borders = try container.decodeIfPresent(Set<String>.self, forKey: .borders)
     }
 }

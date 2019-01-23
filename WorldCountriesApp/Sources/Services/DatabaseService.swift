@@ -12,6 +12,7 @@ import UIKit
 
 protocol DatabaseService: Service {
     func fetchCountries() -> [Country]?
+    func fetchCountries(_ borders: Set<String>) -> [Country]?
 }
 
 class DatabaseServiceImpl: DatabaseService {
@@ -27,6 +28,22 @@ class DatabaseServiceImpl: DatabaseService {
     
     func fetchCountries() -> [Country]? {
         let fetchRequest = NSFetchRequest<Country>(entityName: Country.description())
+        
+        let sort = NSSortDescriptor(key: #keyPath(Country.nativeName), ascending: true)
+        fetchRequest.sortDescriptors = [sort]
+        
+        return try? context.fetch(fetchRequest)
+    }
+    
+    func fetchCountries(_ borders: Set<String>) -> [Country]? {
+        let fetchRequest = NSFetchRequest<Country>(entityName: Country.description())
+        
+        let predicate = NSPredicate(format: "%K in %@", #keyPath(Country.alpha3Code), borders)
+        fetchRequest.predicate = predicate
+        
+        let sort = NSSortDescriptor(key: #keyPath(Country.nativeName), ascending: true)
+        fetchRequest.sortDescriptors = [sort]
+        
         return try? context.fetch(fetchRequest)
     }
 }
