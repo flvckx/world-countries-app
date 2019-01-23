@@ -9,7 +9,7 @@
 import UIKit
 
 protocol CountriesTablePresenterDelegate: Delegate {
-    func newsTablePresenterDidSelectCountry(country: Country, presenter: CountriesTablePresenter)
+    func countriesTablePresenterDidSelectCountry(country: Country, presenter: CountriesTablePresenter)
 }
 
 protocol CountriesTablePresenter: Presenter {

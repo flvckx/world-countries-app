@@ -22,7 +22,7 @@ struct AppRouter {
         let mainNavigationController = storyboard.instantiateViewController(
             withIdentifier: Screens.countries.rawValue) as? UINavigationController
         
-        let newsDetailsViewController = storyboard.instantiateViewController(
+        let countryBordersViewController = storyboard.instantiateViewController(
             withIdentifier: Screens.countryBorders.rawValue) as? CountryBordersViewImpl
     }
 }
