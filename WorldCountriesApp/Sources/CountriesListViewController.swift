@@ -16,11 +16,3 @@ class CountriesListViewController: UIViewController {
     }
 
 }
-
-// MARK: TableViewDataSource
-extension CountriesListViewController: UITableViewDataSource {
-    
-    func numberOfSections(in tableView: UITableView) -> Int {
-        <#code#>
-    }
-}

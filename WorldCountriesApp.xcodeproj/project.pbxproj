@@ -22,6 +22,9 @@
 		C69D67CE21F7BE0300A5A4A6 /* FPActivityIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C69D67CD21F7BE0300A5A4A6 /* FPActivityIndicatorView.swift */; };
 		C69D67D121F7BE5200A5A4A6 /* CountriesTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C69D67D021F7BE5200A5A4A6 /* CountriesTableView.swift */; };
 		C69D67D321F7BEA900A5A4A6 /* CountriesTablePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C69D67D221F7BEA900A5A4A6 /* CountriesTablePresenter.swift */; };
+		C69D67D621F87DBD00A5A4A6 /* CountryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C69D67D521F87DBD00A5A4A6 /* CountryTableViewCell.swift */; };
+		C69D67D821F87E5E00A5A4A6 /* CountryTableViewCellPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C69D67D721F87E5E00A5A4A6 /* CountryTableViewCellPresenter.swift */; };
+		C69D67DA21F87F1B00A5A4A6 /* CountryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C69D67D921F87F1B00A5A4A6 /* CountryTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +45,9 @@
 		C69D67CD21F7BE0300A5A4A6 /* FPActivityIndicatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FPActivityIndicatorView.swift; sourceTree = "<group>"; };
 		C69D67D021F7BE5200A5A4A6 /* CountriesTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesTableView.swift; sourceTree = "<group>"; };
 		C69D67D221F7BEA900A5A4A6 /* CountriesTablePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesTablePresenter.swift; sourceTree = "<group>"; };
+		C69D67D521F87DBD00A5A4A6 /* CountryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryTableViewCell.swift; sourceTree = "<group>"; };
+		C69D67D721F87E5E00A5A4A6 /* CountryTableViewCellPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryTableViewCellPresenter.swift; sourceTree = "<group>"; };
+		C69D67D921F87F1B00A5A4A6 /* CountryTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CountryTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -178,6 +184,9 @@
 		C69D67D421F7C08600A5A4A6 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
+				C69D67D521F87DBD00A5A4A6 /* CountryTableViewCell.swift */,
+				C69D67D721F87E5E00A5A4A6 /* CountryTableViewCellPresenter.swift */,
+				C69D67D921F87F1B00A5A4A6 /* CountryTableViewCell.xib */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -244,6 +253,7 @@
 				C69D67A121F7AF0E00A5A4A6 /* Assets.xcassets in Resources */,
 				C69D67CB21F7BDB500A5A4A6 /* LoadingPageView.xib in Resources */,
 				C69D679C21F7AF0D00A5A4A6 /* CountriesScene.storyboard in Resources */,
+				C69D67DA21F87F1B00A5A4A6 /* CountryTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -254,6 +264,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C69D67D621F87DBD00A5A4A6 /* CountryTableViewCell.swift in Sources */,
 				C69D679921F7AF0D00A5A4A6 /* CountriesListViewController.swift in Sources */,
 				C69D679721F7AF0D00A5A4A6 /* AppDelegate.swift in Sources */,
 				C69D67D121F7BE5200A5A4A6 /* CountriesTableView.swift in Sources */,
@@ -265,6 +276,7 @@
 				C69D67C921F7BD9000A5A4A6 /* LoadingPageView.swift in Sources */,
 				C69D679F21F7AF0D00A5A4A6 /* WorldCountriesApp.xcdatamodeld in Sources */,
 				C69D67CE21F7BE0300A5A4A6 /* FPActivityIndicatorView.swift in Sources */,
+				C69D67D821F87E5E00A5A4A6 /* CountryTableViewCellPresenter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
