@@ -9,8 +9,8 @@
 import UIKit
 
 protocol CountriesListView: View {
-    func showNewsTableView()
-    func hideNewsTableView()
+    func showCountriesTableView()
+    func hideCountriesTableView()
     func openCountryBorders(country: Country)
     func showLoadingPageView()
     func hideLoadingPageView()
@@ -33,29 +33,29 @@ final class CountriesListViewControllerImpl: UIViewController {
         
         router = CountriesSceneRouterImpl(viewController: self)
         
-        let newsTablePresenter = NewsTablePresenterImpl(view: feedTableView)
-        feedTableView.presenter = newsTablePresenter
-        presenter.newsTablePresenter = newsTablePresenter
+        let countriesTablePresenter = CountriesTablePresenterImpl(view: countriesTableView)
+        countriesTableView.presenter = countriesTablePresenter
+        presenter.countriesTablePresenter = countriesTablePresenter
         
         loadingPageView = LoadingPageView(frame: self.view.frame)
-        loadingPageView?.loadingText = "Synching.."
+        loadingPageView?.loadingText = "Please, wait.. Initial loading is proceeding."
         
         presenter.didLoad()
     }
 }
 
-extension NewsFeedViewControllerImpl: CountriesListView {
+extension CountriesListViewControllerImpl: CountriesListView {
     
-    func openNewsDetails(news: News) {
-        router.navigateToNewsDetails(news)
+    func openCountryBorders(country: Country) {
+        router.navigateToCountryBorders(country)
     }
     
-    func showNewsTableView() {
-        feedTableView.isHidden = false
+    func showCountriesTableView() {
+        countriesTableView.isHidden = false
     }
     
-    func hideNewsTableView() {
-        feedTableView.isHidden = true
+    func hideCountriesTableView() {
+        countriesTableView.isHidden = true
     }
     
     func showLoadingPageView() {

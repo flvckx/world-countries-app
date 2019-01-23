@@ -36,7 +36,7 @@ class CountriesTablePresenterImpl: CountriesTablePresenter {
     }
     
     func didSelectCountryAt(index: Int) {
-        delegate?.newsTablePresenterDidSelectCountry(country: countries[index], presenter: self)
+        delegate?.countriesTablePresenterDidSelectCountry(country: countries[index], presenter: self)
         tableView.showCountryAt(index: index)
     }
     

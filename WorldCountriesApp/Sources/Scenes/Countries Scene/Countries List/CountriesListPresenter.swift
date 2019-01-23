@@ -22,7 +22,7 @@ class CountriesListPresenterImpl: CountriesListPresenter {
     
     private weak var view: CountriesListView?
     
-    private var newsLoadingService: CountriesLoadingService
+    private var countriesLoadingService: CountriesLoadingService
     private var databaseService: DatabaseService
     
     private var isLazyLoadingInProgress = false
@@ -39,7 +39,7 @@ class CountriesListPresenterImpl: CountriesListPresenter {
                   countriesLoadingService: CountriesLoadingService) {
         self.view = view
         self.databaseService = databaseService
-        self.newsLoadingService = newsLoadingService
+        self.countriesLoadingService = countriesLoadingService
     }
     
     func didLoad() {
