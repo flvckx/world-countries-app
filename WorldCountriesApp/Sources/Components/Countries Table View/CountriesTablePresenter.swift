@@ -9,7 +9,7 @@
 import UIKit
 
 protocol CountriesTablePresenterDelegate: Delegate {
-    func newsTablePresenterDidSelectCountry(country: Country, presenter: CountriesTablePresenter)
+    func countriesTablePresenterDidSelectCountry(country: Country, presenter: CountriesTablePresenter)
 }
 
 protocol CountriesTablePresenter: Presenter {
@@ -25,7 +25,11 @@ class CountriesTablePresenterImpl: CountriesTablePresenter {
     
     unowned private let tableView: CountriesTableView
     
-    var countries: [Country]
+    var countries: [Country] = [] {
+        didSet {
+            self.tableView.showCountries()
+        }
+    }
     
     var countriesCount: Int {
         return countries.count
@@ -36,7 +40,7 @@ class CountriesTablePresenterImpl: CountriesTablePresenter {
     }
     
     func didSelectCountryAt(index: Int) {
-        delegate?.newsTablePresenterDidSelectCountry(country: countries[index], presenter: self)
+        delegate?.countriesTablePresenterDidSelectCountry(country: countries[index], presenter: self)
         tableView.showCountryAt(index: index)
     }
     

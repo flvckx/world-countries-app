@@ -14,25 +14,28 @@ import CoreData
 public class Country: NSManagedObject, Decodable {
 
     @NSManaged public var nativeName: String?
-    @NSManaged public var borders: Set<Country>?
+    @NSManaged public var alpha3Code: String?
+    @NSManaged public var borders: Set<String>?
     
     enum CodingKeys: String, CodingKey {
         case nativeName
+        case alpha3Code
         case borders
     }
     
     public required convenience init(from decoder: Decoder) throws {
         guard let codingUserInfoKeyManagedObjectContext = CodingUserInfoKey.managedObjectContext,
             let managedObjectContext = decoder.userInfo[codingUserInfoKeyManagedObjectContext] as? NSManagedObjectContext,
-            let entity = NSEntityDescription.entity(forEntityName: "User", in: managedObjectContext) else {
-                fatalError("Failed to decode User")
+            let entity = NSEntityDescription.entity(forEntityName: "Country", in: managedObjectContext) else {
+                fatalError("Failed to decode Country")
         }
         
         self.init(entity: entity, insertInto: managedObjectContext)
         
         let container = try decoder.container(keyedBy: CodingKeys.self)
         self.nativeName = try container.decodeIfPresent(String.self, forKey: .nativeName)
-        self.borders = try container.decodeIfPresent(Set<Country>.self, forKey: .borders)
+        self.alpha3Code = try container.decodeIfPresent(String.self, forKey: .alpha3Code)
+        self.borders = try container.decodeIfPresent(Set<String>.self, forKey: .borders)
     }
 }
 
