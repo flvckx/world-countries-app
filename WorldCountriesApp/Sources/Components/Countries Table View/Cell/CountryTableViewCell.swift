@@ -15,7 +15,7 @@ protocol CountryTableViewCell: View {
 final class CountryTableViewCellImpl: UITableViewCell, CountryTableViewCell {
     
     // MARK: Constants
-    static let height: CGFloat = 70
+    static let height: CGFloat = 44
     
     // MARK: IBOutlet
     @IBOutlet private weak var countryNameLabel: UILabel!

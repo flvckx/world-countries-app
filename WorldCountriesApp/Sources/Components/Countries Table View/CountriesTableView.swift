@@ -35,8 +35,7 @@ class CountriesTableViewImpl: UITableView {
         let identifier = String(describing: CountryTableViewCell.self)
         let nib = UINib(nibName: identifier, bundle:nil)
         self.register(nib, forCellReuseIdentifier: identifier)
-        self.estimatedRowHeight = CountryTableViewCellImpl.height
-        self.rowHeight = UITableView.automaticDimension
+        self.rowHeight = CountryTableViewCellImpl.height
         self.contentInset =  UIEdgeInsets(top: 7, left: 0, bottom: 0, right: 0)
         self.delegate = self
         self.dataSource = self
