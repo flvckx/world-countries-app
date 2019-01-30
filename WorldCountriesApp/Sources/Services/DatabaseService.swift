@@ -31,6 +31,7 @@ class DatabaseServiceImpl: DatabaseService {
         
         let sort = NSSortDescriptor(key: #keyPath(Country.nativeName), ascending: true)
         fetchRequest.sortDescriptors = [sort]
+        fetchRequest.fetchBatchSize = 20
         
         return try? context.fetch(fetchRequest)
     }

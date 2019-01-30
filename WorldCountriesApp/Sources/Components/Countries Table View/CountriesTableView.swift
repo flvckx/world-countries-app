@@ -17,8 +17,6 @@ class CountriesTableViewImpl: UITableView {
     
     var presenter: CountriesTablePresenter!
     
-    private let footerHeight: CGFloat = 40
-    
     override init(frame: CGRect, style: Style) {
         super.init(frame: frame, style: style)
         
@@ -36,7 +34,7 @@ class CountriesTableViewImpl: UITableView {
         let nib = UINib(nibName: identifier, bundle:nil)
         self.register(nib, forCellReuseIdentifier: identifier)
         self.rowHeight = CountryTableViewCellImpl.height
-        self.contentInset =  UIEdgeInsets(top: 7, left: 0, bottom: 0, right: 0)
+        self.tableFooterView = UIView(frame: .zero)
         self.delegate = self
         self.dataSource = self
         
